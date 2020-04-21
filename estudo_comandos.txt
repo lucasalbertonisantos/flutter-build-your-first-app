@@ -1,0 +1,79 @@
+Passos de instalação:
+- Download do site: https://flutter.dev/docs/get-started/install/windows
+- Extrair o arquivo .zip para uma pasta que tenha acesso
+- Incluir o caminho "CAMINHO_PASTA_ACESSO/flutter/bin" dentro do PATH nas variáveis de ambiente do windows
+- testar abrindo o cmd e digitando flutter
+- Aconteceu devido a não estar instalado o ANDROID SDK Command-Line Tools (latest), para arrumar Abrir o android studio -> Tools -> SDK Manager -> Android SDK -> SDK Tools, Selecionar Android  SDK Command-Line Tools (latest) -> apply. Esperar o download e retentar
+
+- Para iniciar o código flutter: void main() => runApp(MyApp());, sendo o "MyApp()" uma estensão da classe abstrata Widget
+- O Material Design é um conjunto de componentes padrões utilizados para desenvolvimento de aplicativos android e alguns IOS.
+----------------------------------------------------------------
+Documentações:
+Criar Emulador:
+Ao finalizar o processo de instalação, vai aparecer a launcher do Android Studio, clique na opção Configure na parte inferior à direita e escolha a opção AVD Manager, siga as instruções para criar um emulador(https://developer.android.com/studio/run/managing-avds#createavd). Na documentação do Flutter também apresenta tutorial de instalação do emulador(https://developer.android.com/studio/run/managing-avds#createavd).
+- Principal, clicar na parte inferior à direita -> + Create Virtual Device -> Phone -> Pixe 2 -> Pie -> Clicar em download -> após feito download clicar em next, next e finish e pronto
+Erro ao executar o flutter run:
+- Aconteceu devido a não estar instalado o ANDROID SDK Command-Line Tools (latest), para arrumar Abrir o android studio -> Tools -> SDK Manager -> Android SDK -> SDK Tools, Selecionar Android  SDK Command-Line Tools (latest) -> apply. Esperar o download e retentar
+- No Dart é muito comum ter uma vírgula no final dos parâmetros, mesmo sem nenhum parâmetro posterior para ajudar a identar o código
+- Na página da documentação do Flutter, acessaremos o menu "Development > User interface > Widget catalog".
+- Existe arvore de widgets, ele trabalha parecido com swing, ou seja, temos que montar a tela baseado em estrutura de layouts, que são chamados de widgets.
+- Material Design: http://material.io/design/introduction
+- Dentro do widget MaterialApp não é necessário colocar a direção do texto no widget Text, caso contrário é necessário, no caso o MaterialApp usa um direcionamento padrão, por este motivo não é necessário
+- Existe também o conjunto de componentes do Cupertino (https://flutter.dev/docs/development/ui/widgets/cupertino) que apresenta um estilo de design comum na plataforma do iOS.
+- StatelessWidget e StatefulWidget são usados para criar um widget com maior facilidade. Geralmente será usado o StatelessWidget, por questão de ser uma boa prática e ele ser "imutável".
+- Para deixar um atributo privado, deve-se colocar o "_" na frente dele.
+- Porém, também podemos usar outros recursos. Depois do escopo do nosso runApp(), escreveremos stful ou stless. Essas siglas permitem a criação automática de um Stateful Widget ou de um Stateless Widget, respectivamente, incluindo o esqueleto pré-pronto (template) do IntelliJ. Em seguida, basta acrescentar o nome da nova classe.
+- O raio acima da IDE Intellij significa hot reload e facilita no desenvolvimento.
+- Quando o RaisedButton não tem a implementação do método onpressed ele fica com uma aparência de desabilitado
+- Para navegar para uma nova tela é necessário usar o Navigator.push passando o contexto (context) que já esta disponível dentro do material design. POrém também é possível criar uma rota, mas é um pouco mais complicado.
+Ex: floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context){
+            return FormularioTransferencia();
+          }));
+        },
+      ),
+- Column não é dinâmico, ou seja, não possibilita scroll. Para isso usar o ListView e para deixar dinâmico deve se usar o ListView.builder. Também é possível envolver o Column em um outro componente Widget que faça a função do scroll Ex: SingleChildScrollView.
+- Para utilização de formulários é interessante usar o StatefulWidget, porém para atualizar o formulário, lista dinâmica, é importante usar o setState, pois ele garante que mesmo demorando será atualizado o componente.
+- Usaremos também outra ferramenta, que é a página https://material.io/resources/. Nela, encontraremos diversos recursos que podem nos orientar e auxiliar na construçao de layouts do Material Design, dentre eles o Color Tool, que possui um conjunto de paletas replicáveis no Flutter a partir do Material components.
+
+----------------------------------------------------------------
+Comandos:
+- Avaliar o ambiente de desenvolvimento:
+flutter doctor
+- Criar o projeto:
+flutter create NOME_PROJETO
+- Mostrar os emuladores:
+flutter emulators
+- Rodar o emulador:
+flutter emulators --launch id-do-emulador
+flutter emulators --launch Pixel_2_API_28
+- Executar o flutter dentro do diretorio do projeto
+flutter run
+
+
+----------------------------------------------------------------
+Comandos Intellij:
+- Mostrar tipo do parametro esperado
+Ctrl + P
+- Mostrar documentação
+Ctrl + Q
+- Execução
+shift + f10
+- Formatar código no estilo do Dart e Flutter:
+Ctrl + Alt + L
+- Expandir e voltar o código:
+Ctrl + shift + F12
+- Mostrar opções de envolvimento e conversão e resolver problemas:
+Alt + Enter
+- Mostrar opções de código (gerar construtor)
+Alt + Insert
+- Duplicar o código selecionado:
+Ctrl + D
+- Renomear em todo workspace
+Shift + F6
+- Refactor (extrair metodo):
+Ctrl + Alt + M
+- Navegar entre classes:
+Ctrl + N
