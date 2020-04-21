@@ -37,6 +37,19 @@ Ex: floatingActionButton: FloatingActionButton(
 - Column não é dinâmico, ou seja, não possibilita scroll. Para isso usar o ListView e para deixar dinâmico deve se usar o ListView.builder. Também é possível envolver o Column em um outro componente Widget que faça a função do scroll Ex: SingleChildScrollView.
 - Para utilização de formulários é interessante usar o StatefulWidget, porém para atualizar o formulário, lista dinâmica, é importante usar o setState, pois ele garante que mesmo demorando será atualizado o componente.
 - Usaremos também outra ferramenta, que é a página https://material.io/resources/. Nela, encontraremos diversos recursos que podem nos orientar e auxiliar na construçao de layouts do Material Design, dentre eles o Color Tool, que possui um conjunto de paletas replicáveis no Flutter a partir do Material components.
+- Separação de arquivo e boas práticas no Flutter: https://medium.com/flutter-community/flutter-code-organization-de3a4c219149
+- Adaptando o tema dentro do app:
+return MaterialApp(
+      theme: ThemeData(
+        primaryColor: Colors.green[900],
+        accentColor: Colors.blueAccent[700],
+        buttonTheme: ButtonThemeData(
+          buttonColor: Colors.blueAccent[700],
+          textTheme: ButtonTextTheme.primary,
+        ),
+      ),
+      home: ListaTransferencias(),
+    );
 
 ----------------------------------------------------------------
 Comandos:
